@@ -1,0 +1,1028 @@
+<!--<iframe src="generator/generator1.html" scrolling="auto" frameborder="0" width="100%" height="600"></iframe>-->
+
+<?php
+	$uuid = "Enter your account UUID...";
+	try{
+        if (isset($_GET['UUID'])) $uuid = $_GET['UUID'];
+    } catch (Exception $e){
+        
+    }
+?>
+
+<script type="text/javascript" src="/fancybox/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="/fancybox/fancybox/jquery.fancybox-1.3.4.js"></script>
+<script type="text/javascript" src="/jscolor/jscolor.js"></script>
+<script type="text/javascript">
+<!--
+document.write(unescape("%3Cscript src='" + document.location.protocol + "//dxa05szpct2ws.cloudfront.net/utils/trpdDialog/video-dialog.min.js' type='text/javascript'%3E%3C/script%3E"));	
+// -->
+</script>
+
+<link rel="stylesheet" href="/fancybox/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+
+<!-- anything slider addons -->
+<script type="text/javascript" src="/anything-slider/js/jquery.easing.1.2.js"></script>
+<script type="text/javascript" src="/anything-slider/js/swfobject.js"></script>
+<link rel="stylesheet" href="/anything-slider/css/anythingslider.css" type="text/css" media="screen" />
+<script type="text/javascript" src="/anything-slider/js/jquery.anythingslider.js"></script>
+<link rel="stylesheet" href="/anything-slider/css/theme-metallic.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/anything-slider/css/theme-minimalist-round.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/anything-slider/css/theme-minimalist-square.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/anything-slider/css/theme-construction.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/anything-slider/css/theme-cs-portfolio.css" type="text/css" media="screen" />
+<script src="/anything-slider/js/jquery.anythingslider.fx.js"></script>
+<script src="/anything-slider/js/jquery.anythingslider.video.js"></script>
+<script type="text/javascript">
+jQuery(function(){
+	jQuery('#slider').anythingSlider({
+		theme: 'minimalist-squared',
+		resizeContents: false,
+		buildArrows: false,
+		buildNavigation: false,
+		buildStartStop: false,
+		enableKeyboard: false,
+		infiniteSlides: false,
+		mode : "h",
+		navigationFormatter : function(index, panel){ 
+			return ['Step 1', 'Step 2', 'Step 3', 'Step4', 'Step5', 'Step6', 'Step7'][index - 1];
+		}	
+	}); 
+});
+</script>
+
+<style>
+div#slider {
+    width: 750px;
+    height: 400px;
+    list-style: none;
+}
+
+.sliderPages {
+    width: 750px;
+    height: 400px;
+    list-style: none;
+}
+</style>
+<!-- end anything slider addons -->
+
+<center>
+<div id="slider">
+	<div id="step_1">
+		<div class="sliderPages">
+		<div style="text-align:left;">
+			<span class="badge">1</span><b> Enter Account UUID:</b> <input id="uuid" type="text" onblur="changeTextValueBlur(this);" onclick="changeTextValueClick(this);" style="color:gray" size="50" value="Enter your account UUID..." name="uuid" required="required" /><b style="color:red"> * </b><br />
+			<br />
+			<span class="badge">2</span><b> Select Your Ecommerce Platform:</b>
+			<br />
+			<br />
+			 <fieldset>
+			  <!-- Multiple Radios -->
+			  <label class="radio">
+				<input type="radio" value="Magento" name="platforms" onclick="platform='magento'">
+				<img src="/images/generator/icons/magento.png" style="width:20px;height:20px;padding: 0px 5px 5px 5px" />
+				Magento
+			  </label>
+			  <label class="radio">
+				<input type="radio" value="Volusion" name="platforms" onclick="platform='volusion'">
+				<img src="/images/generator/icons/volusion.png" style="width:20px;height:20px;padding: 0px 5px 5px 5px;padding: 0px 5px 5px 5px" />
+				Volusion
+			  </label>
+			  <label class="radio">
+				<input type="radio" value="Yahoo" name="platforms" onclick="platform='yahoo'">
+				<img src="/images/generator/icons/yahoo.png" style="width:20px;height:20px;padding: 0px 5px 5px 5px" />
+				Yahoo
+			  </label>
+			  <label class="radio">
+				<input type="radio" value="BigCommerce" name="platforms" onclick="platform='bigcommerce'">
+				<img src="/images/generator/icons/bigcommerce.png" style="width:20px;height:20px;padding: 0px 5px 5px 5px" />
+				BigCommerce
+			  </label>
+			  <label class="radio">
+				<input type="radio" value="Prestashop" name="platforms" onclick="platform='prestashop'">
+				<img src="/images/generator/icons/prestashop.gif" style="width:20px;height:20px;padding: 0px 5px 5px 5px" />
+				PrestaShop
+			  </label>
+			  <label class="radio">
+				<input type="radio" value="3dCart" name="platforms" checked="checked" onclick="platform='3dcart'">
+				<img src="/images/generator/icons/3dcart.jpg" style="width:20px;height:20px;padding: 0px 5px 5px 5px" />
+				3dCart
+			  </label>
+			  <label class="radio">
+				<input type="radio" value="Other" name="platforms" checked="checked" onclick="platform='other'">
+				<img src="/images/generator/icons/other.jpg" style="width:20px;height:20px;padding: 0px 5px 5px 5px" />
+				Other
+			  </label>
+			</fieldset>
+		</div>
+	</div>
+	</div>
+	<div id="step_2" style="display:none;">
+		<div style="text-align:left;" class="sliderPages">
+				<span class="badge">3</span><b> Select Your Integration Style:</b>
+				<br />
+				<br />
+				<br />
+				<table>
+				  <tbody>
+					<tr>
+					<td style="width:5px"></td>
+					  <td id="embeddeddiv" style="border-width:2px;border-style:solid;border-color:white;width:345px" onclick="unSelectElement('dialogdiv');selectElement('embeddeddiv');">
+						<img src="/images/generator/generator-embedded.png" style="width:309px;height:220px;" /><br /><br />
+						<div style="width:auto;text-align:center;">Embed&nbsp;&nbsp;<a style="padding-left:5px" href="javascript:zoomImage('/images/generator/generator-embedded-zoom.png');"><i class="icon-zoom-in"></i></a></div></td>
+					  <td style="width:50px;display:block"><br />
+					  </td>
+					  <td id="dialogdiv" style="border-width:2px;border-style:solid;border-color:white;width:345px" onclick="unSelectElement('embeddeddiv');selectElement('dialogdiv');">
+						<img src="/images/generator/generator-dialog.png" style="width:309px;height:220px;" /><br /><br />
+						<div style="width:auto;text-align:center;">Popup Dialog&nbsp;&nbsp;<a style="padding-left:5px" href="javascript:zoomImage('/images/generator/generator-dialog-zoom.png');"><i class="icon-zoom-in"></i></a></div></td>
+					</tr>
+				  </tbody>
+				</table>
+			</div>
+	</div>
+	
+	<div id="step_3" style="display:none;">
+	<div style="text-align:left;" class="sliderPages">
+		<div id="dialogSpec">
+			<span class="badge">4</span><b> Choose Dialog Style:</b>
+						<br /><br />
+						<b style="font-size:90%">4.1 Choose Color:</b> <input id="colorChoose" class="color"/>
+						<br /><br />
+						<b style="font-size:90%">4.2 Include Border:</b> <input id="borderChoose" type="checkbox">
+						<br />
+						<br />
+						<button onclick="javascript:showVideoDialog('Video title here', video, '#'+document.getElementById('colorChoose').value, document.getElementById('borderChoose').checked);">Test The Dialog!</button>
+						
+			</div>
+			<div id="embedSpec" style="display:none;">
+				<span class="badge">4</span><b> Choose Ratio and Size:</b>
+				<br />
+				<br />
+				<br />
+				<fieldset>
+				<table>
+					<tr>
+						<td style="width:90px;"></td>
+						<td style="padding:5px 25px 5px 25px">
+							  <label class="radio">
+								<input type="radio" required="required" value="default" name="size" onclick="esize=this.value;" checked="checked" />
+								<b>Keep Original</b>
+							  </label>
+						</td>
+						<td style="padding:5px 25px 5px 25px"><a style="" href="javascript:zoomText('#ins_size');"><img style="display:inline" src="/images/generator/q.png" width="15" height="15"/></a>
+							<div style="display:none;">
+								<div id="ins_size" style="font-size:150%;width:220px;padding: 15px 15px 15px 15px">
+								<h2><img style="display:inline" src="/images/generator/q.png" width="30" height="30"/> Keep Original</h2><br>
+								Recommended - The player size will be dynamic, it will use the video original size and ratio.
+								</div>
+							</div></td>
+					</tr>
+					<tr>
+						<td>
+						  <b>Large: </b> </td>
+						  <td style="padding:5px 25px 5px 25px">
+							<label class="radio">
+								<input type="radio" required="required" value="640:480" name="size" onclick="esize=this.value;" />
+								640:480 (4:3)
+							  </label>
+						  </td>
+						  <td style="padding:5px 25px 5px 25px"> 
+						  <label class="radio">
+								<input type="radio" required="required" value="640:360" name="size" onclick="esize=this.value;" />
+								640:360 (16:9)
+							  </label>
+							
+						  </td></tr>
+						  <tr>
+						  <td>
+						  <b>Medium: </b> 
+						  </td>
+						  <td style="padding:5px 25px 5px 25px">
+						  <label class="radio">
+								<input type="radio" required="required" value="480:360" name="size" onclick="esize=this.value;" />480:360 (4:3)
+								</label>
+							</td>
+							<td style="padding:5px 25px 5px 25px">
+							<label class="radio">
+								<input type="radio" required="required" value="480:270" name="size" onclick="esize=this.value;" />480:270 (16:9)
+								</label>
+							</td>
+						</tr>
+						 <tr>
+						  <td>
+						  <b>Small: </b>
+						  </td>
+						  <td style="padding:5px 25px 5px 25px"> 
+						  <label class="radio">
+							<input type="radio" required="required" value="400:300" name="size" onclick="esize=this.value;" />400:300 (4:3)
+							</label>
+						  </td>
+						  <td style="padding:5px 25px 5px 25px">
+						  <label class="radio">
+							<input type="radio" required="required" value="400:225" name="size" onclick="esize=this.value;" />400:225 (16:9)
+							</label>
+						</td>
+					</tr>
+			</table>
+			</fieldset>
+			</div>
+		</div>                        
+	</div>
+
+	<div id="step_4"  style="display:none;">
+	<div style="text-align:left;" class="sliderPages">
+		<span class="badge">5</span><b> Choose Player Style:</b>
+		<br />
+              <br />
+<br />			  
+                    <table>
+                      <tbody>
+                        <tr>
+						<td style="width:5px"></td>
+						<td  onclick="unSelectStyleElements();selectStyleElement(this.id);"
+
+                            style="padding-left:5px;padding-right:5px;border-width:2px;border-style:solid;border-color:white;width:345px"
+
+                            id="regstyle"> <img src="/images/generator/reg.png"
+
+                              style="width:320px;height:243px" /><br /><input id="regstyleradio" type="radio"
+
+                              name="p_style" value="full" required="required" />&nbsp;Full
+                            Display </td><td style="width:10px"></td>
+							
+                          <td onclick="unSelectStyleElements();selectStyleElement(this.id);"
+
+                            style="padding-left:5px;padding-right:5px;border-width:2px;border-style:solid;border-color:white;width:345px"
+
+                            id="chomlessstyle"> <img
+
+                              src="/images/generator/chromeless.png"
+
+                              style="width:320px;height:243px" /><br /><input id="chomlessstyleradio" type="radio"
+
+                              name="p_style" value="chromeless" required="required" />&nbsp;Chromeless
+                            Display </td>
+                          
+                        </tr>
+                      </tbody>
+                    </table>
+			</div>
+	</div>
+
+	<div id="step_5" style="display:none;">
+		<div style="text-align:left;" class="sliderPages">
+		<span class="badge">6</span><b> Choose Player Skin:</b>
+		<br />
+             <br />
+<br />			 
+                    <table>
+                      <tbody>
+                       <tr>
+						  <td style="width:5px"></td>
+                          <td onclick="unSelectSkinElements();selectSkinElement(this.id);"
+
+                            style="padding-left:5px;padding-right:5px;border-width:2px;border-style:solid;border-color:white;width:122px"
+
+                            id="default"> <img
+
+                              src="/images/generator/player-default.png"
+
+                              style="width:120px;height:100px" /><br /><input id="defaultradio" type="radio"
+
+                              name="skin" value="default" required="required" />&nbsp;Default
+							  <a style="position:absolute;padding-left:5px" href="javascript:zoomImage('/images/generator/player-default.png');"><i class="icon-zoom-in"></i></a>
+							  </td><td style="width:5px"></td>
+                          <td onclick="unSelectSkinElements();selectSkinElement(this.id);"
+
+                            style="padding-left:5px;padding-right:5px;border-width:2px;border-style:solid;border-color:white;width:122px"
+
+                            id="Blue"> <img
+
+                              src="/images/generator/player-blue.png"
+
+                              style="width:120px;height:100px" /> <br /><input id="Blueradio" type="radio"
+
+                              name="skin" value="Blue" required="required" />&nbsp;Blue
+							  <a style="position:absolute;padding-left:5px" href="javascript:zoomImage('/images/generator/player-blue.png');"><i class="icon-zoom-in"></i></a>
+							  </td>
+							 <td style="width:5px"></td> 
+                          <td onclick="unSelectSkinElements();selectSkinElement(this.id);"
+
+                            style="padding-left:5px;padding-right:5px;border-width:2px;border-style:solid;border-color:white;width:122px"
+
+                            id="SkyBlue" style="padding-left:5px;padding-right:5px;"> <img
+
+                              src="/images/generator/player-skyblue.png"
+
+                              style="width:120px;height:100px" /><br /> <input id="SkyBlueradio" type="radio"
+
+                              name="skin" value="SkyBlue" required="required" />&nbsp;Sky
+                            Blue
+							<a style="position:absolute;padding-left:5px" href="javascript:zoomImage('/images/generator/player-skyblue.png');"><i class="icon-zoom-in"></i></a>
+							</td>
+							<td style="width:5px"></td>
+                          <td onclick="unSelectSkinElements();selectSkinElement(this.id);"
+
+                            style="padding-left:5px;padding-right:5px;border-width:2px;border-style:solid;border-color:white;width:122px"
+
+                            id="Purple"> <img src="/images/generator/player-purple.png"
+
+                              style="width:120px;height:100px" /> <br /><input id="Purpleradio" type="radio"
+
+                              name="skin" value="Purple" required="required" />&nbsp;Purple
+							  
+							  <a style="position:absolute;padding-left:5px" href="javascript:zoomImage('/images/generator/player-purple.png');"><i class="icon-zoom-in"></i></a>
+                            </td>
+                        </tr>
+						<tr style="height:10px;"></tr>
+                        <tr>
+						<td style="width:5px"></td>
+                          <td onclick="unSelectSkinElements();selectSkinElement(this.id);"
+
+                            style="padding-left:5px;padding-right:5px;border-width:2px;border-style:solid;border-color:white;width:122px"
+
+                            id="compact"> <img src="/images/generator/player-compact.png"
+
+                              style="width:120px;height:100px" /> <br /><input id="compactradio" type="radio"
+
+                              name="skin" value="compact" required="required" />&nbsp;Compact
+							  <a style="position:absolute;padding-left:5px" href="javascript:zoomImage('/images/generator/player-compact.png');"><i class="icon-zoom-in"></i></a>
+                            </td>
+							<td style="width:5px"></td>
+                          <td onclick="unSelectSkinElements();selectSkinElement(this.id);"
+
+                            style="padding-left:5px;padding-right:5px;border-width:2px;border-style:solid;border-color:white;width:122px"
+
+                            id="BlackGreen" style="padding-left:5px;padding-right:5px;"> <img
+
+                              src="/images/generator/player-blackgreen.png"
+
+                              style="width:120px;height:100px" /> <br /><input id="BlackGreenradio" type="radio"
+
+                              name="skin" value="BlackGreen" required="required" />&nbsp;Black
+                            / Green
+							<a style="position:absolute;padding-left:5px" href="javascript:zoomImage('/images/generator/player-blackgreen.png');"><i class="icon-zoom-in"></i></a>
+							</td>
+							<td style="width:5px"></td>
+                          <td onclick="unSelectSkinElements();selectSkinElement(this.id);"
+
+                            style="padding-left:5px;padding-right:5px;border-width:2px;border-style:solid;border-color:white;width:122px"
+
+                            id="BlackBlue" style="padding-left:5px;padding-right:5px;"> <img
+
+                              src="/images/generator/player-blackblue.png"
+
+                              style="width:120px;height:100px" /> <br /><input id="BlackBlueradio" type="radio"
+
+                              name="skin" value="BlackBlue" required="required" />&nbsp;Black
+                            / Blue
+							
+							<a style="position:absolute;padding-left:5px" href="javascript:zoomImage('/images/generator/player-blackblue.png');"><i class="icon-zoom-in"></i></a>
+							</td>
+							<td style="width:5px"></td>
+                          <td onclick="unSelectSkinElements();selectSkinElement(this.id);"
+
+                            style="padding-left:5px;padding-right:5px;border-width:2px;border-style:solid;border-color:white;width:122px"
+
+                            id="BlackRed" style="padding-left:5px;padding-right:5px;"> <img
+
+                              src="/images/generator/player-blackred.png"
+
+                              style="width:120px;height:100px" /><br /> <input id="BlackRedradio" type="radio"
+
+                              name="skin" value="BlackRed" required="required" />&nbsp;Black
+                            / Red
+							<a style="position:absolute;padding-left:5px" href="javascript:zoomImage('/images/generator/player-blackred.png');"><i class="icon-zoom-in"></i></a>
+							</td>
+                        </tr>
+                      </tbody>
+                    </table>
+				</div>
+	</div>
+	
+	<div id="step_6" style="display:none;">
+		<div style="text-align:left;" class="sliderPages">
+			<span class="badge">7</span><b> Advanced Features (<a href="javascript:goNext();">Skip</a>)</b>
+			<br /><br />
+      <b style="font-size:90%">7.1 Social Sharing:</b><br /><br />
+	  <div id="social">
+		<table>
+		<tbody>
+		<tr>
+		<td style="padding-right:20px">
+		 <label class="checkbox">
+			<input type="checkbox" value="facebook" name="Facebook" id="Facebook" onclick="facebook = this.checked" />
+			<img src="/images/generator/facebook.jpg" style="display:inline" />
+         </label>
+		 </td>
+		 <td style="padding: 0px 20px">
+		 <label class="checkbox">
+		  <input type="checkbox" value="twitter" name="Twitter" onclick="twitter = this.checked" />
+		  <img src="/images/generator/twitter.jpg" style="display:inline" />
+		  </label>
+		  </td>
+		 <td style="padding-left:20px">
+		 <label class="checkbox">
+		  <input type="checkbox" value="linkedin" name="LinkedIn" onclick="linkedin = this.checked;" />
+		  <img src="/images/generator/linkedin.png" style="display:inline" />
+		  </label>
+		  </td>
+		  </tr>
+		  </tbody>
+		  </table>
+	  </div>
+      <br />
+      <b style="font-size:90%">7.2 "Add To Cart" Button Action:</b><br />
+      <br />
+		<input type="radio" onclick="document.getElementById('atc_action').disabled=false;atc_type=this.value;" value="javas" name="atc_type" /> Javascript Action 
+		&nbsp;&nbsp;&nbsp;<input type="radio" value="url" name="atc_type" onclick="document.getElementById('atc_action').disabled=false;atc_type=this.value;" /> URL<br /><br />
+		Enter Action / URL:
+	  <input type="text" id="atc_action" disabled="true" required="required" size="30" name="atc_action" />
+	  
+	  <div id="Google">
+	  <b style="font-size:90%;padding-bottom:2px">7.3 Google:</b><br />
+	  	<i class="icon-ok"></i> Video Sitemap - Enabled<br/>
+		<i class="icon-ok"></i> Anaytics - Enabled
+	 </div>
+	  
+	  <div id="playControls">
+	  <br />
+	  <b style="font-size:90%;padding-bottom:2px">7.4 Playback Options:</b><br />
+	  <table>
+		  <tr>
+		  <td style="padding-right:5px">
+			<input type="checkbox" value="autoplay" name="autoplay" id="autoplay" onclick="autoplay=this.checked"/> Enable Autoplay
+		</td>
+		<td>
+			<input type="checkbox" value="loop" name="loop"  id="loop" onclick="loop=this.checked"/> Enable Loop Play</td>
+		</tr>
+		<tr>
+		<td  style="padding-right:5px">
+			<input type="checkbox" value="mute" name="mute" id="mute" onclick="mute=this.checked"/> Enable Mute
+		  </td>
+		 <td>
+			<input type="checkbox" value="fullscreen" name="fullscreen"  id="fullscreen" onclick="fullscreen=this.checked"/> Enable Full Screen Button</td></tr>
+	</table>
+	</div>
+	</div>
+	</div>
+	
+	<div id="step_7" style="display:none;">
+		<div style="text-align:left;">
+			<h3>Main Script</h3><br />
+			<b>Location:</b> Header (General or Product page)<br />
+			<b>Dynamic Content:</b>  <br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {SKU}</span> - Replace with the product SKU<br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {Video Title}</span> - Dialog header, should be replaced with the product name or
+			leave blank<br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {IMAGE-URL}</span> - Replace with the product main image URL<br />
+			<br />
+			<div id="footer_code_embed" style="display:none;">
+<pre><script type="text/javascript">
+// Grab the product SKU / Code
+var trpdSKU = '{SKU}';
+
+var video; var product;
+function initTreepodia() { product = Treepodia.getProduct('{UUID}', trpdSKU); product.requestVideo(handleVideo); }
+function handleVideo(vid) { video = vid; _GOOGLEA_ if (vid.hasVideos()) { video.setPlayer("{SKIN}"); video.setChromeless(_PSTYLE_); _ATC_ACTION_ _FACEBOOK_ _TWITTER_ _LINKEDIN_ video.setAllowFullScreen(_FULLSCREEN_); video.setLoop(_LOOP_); video.setAutoplay(_AUTOPLAY_); video.setMute(_MUTE_); _WIDTH1_ _HEIGHT1_ video.show('video-location'); } }
+</script>
+
+<script type="text/javascript">
+// Include Treepodia main Script
+document.write(unescape("%3Cscript src='" + document.location.protocol + "//dxa05szpct2ws.cloudfront.net/TreepodiaAsyncLoader.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+document.write(unescape("%3Cscript src='" + document.location.protocol + "//dxa05szpct2ws.cloudfront.net/TreepodiaGA.js' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+
+<meta property="og:image" content="{IMAGE-URL}" />
+<meta property="og:video" content="http://api.treepodia.com/video/compact.swf?player_api_base=http://api.treepodia.com/video/overlay/&amp;player_chromeless=true&amp;player_skin_on_top=false&amp;bgcolor=0xffffff&amp;video_auto_play=true&amp;video_play_on_click=true&amp;player_allow_full_screen=true&amp;player_callback=_trpd_vid_cbk_0&amp;player_show_logo=true&amp;audio_init_mute=false&amp;video_url=http://api.treepodia.com/video/get/{UUID4}/{SKU}" />
+<meta property="og:video:secure_url" content="https://api.treepodia.com/video/compact.swf?player_api_base=https://api.treepodia.com/video/overlay/&amp;player_chromeless=true&amp;player_skin_on_top=false&amp;bgcolor=0xffffff&amp;video_auto_play=true&amp;video_play_on_click=true&amp;player_allow_full_screen=true&amp;player_callback=_trpd_vid_cbk_0&amp;player_show_logo=true&amp;audio_init_mute=false&amp;video_url=https://api.treepodia.com/video/get/{UUID6}/{SKU}" />
+<meta property="og:video:type" content="video/mp4" />
+<meta property="og:video:width" content="_WIDTH3_" />
+<meta property="og:video:height" content="_HEIGHT3_" />
+
+<link rel="image_src" href="{IMAGE-URL}" />
+<link rel="thumbnail" type="image/jpeg" href="{IMAGE-URL}" />	
+<link rel="video_src" href="https://api.treepodia.com/video/compact.swf?player_api_base=http://api.treepodia.com/video/overlay/&amp;player_chromeless=true&amp;player_skin_on_top=false&amp;bgcolor=0xffffff&amp;video_auto_play=true&amp;video_play_on_click=true&amp;player_allow_full_screen=true&amp;player_callback=_trpd_vid_cbk_0&amp;player_show_logo=true&amp;audio_init_mute=false&amp;video_url=http://api.treepodia.com/video/get/{UUID3}/{SKU}" />
+<meta name="medium" content="video">
+<meta name="video_height" content="_WIDTH2_">
+<meta name="video_width" content="_HEIGHT2_">
+<meta name="video_type" content="video/mp4" /></pre>
+			</div>
+			
+<div id="footer_code_dialog">
+<pre><script type="text/javascript">
+// Grab the product SKU / Code
+var trpdSKU = '{SKU}';
+
+var video; var product;
+function initTreepodia() { product = Treepodia.getProduct('{UUID}', trpdSKU); product.requestVideo(handleVideo); }
+function handleVideo(vid) { video = vid; _GOOGLEA_ if (vid.hasVideos()) { video.setPlayer("{SKIN}"); video.setChromeless(_PSTYLE_); _ATC_ACTION_ _FACEBOOK_ _TWITTER_ _LINKEDIN_ } else { document.getElementById('video-btn').style.display = 'none'; } }
+</script>
+
+<script type="text/javascript">
+// Include Dialog Script
+document.write(unescape("%3Cscript src='" + document.location.protocol + "//dxa05szpct2ws.cloudfront.net/utils/trpdDialog/video-dialog.min.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+// Include Treepodia main script
+document.write(unescape("%3Cscript src='" + document.location.protocol + "//dxa05szpct2ws.cloudfront.net/TreepodiaAsyncLoader.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+document.write(unescape("%3Cscript src='" + document.location.protocol + "//dxa05szpct2ws.cloudfront.net/TreepodiaGA.js' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+
+<meta property="og:image" content="{IMAGE-URL}" />
+<meta property="og:video" content="http://api.treepodia.com/video/compact.swf?player_api_base=http://api.treepodia.com/video/overlay/&amp;player_chromeless=true&amp;player_skin_on_top=false&amp;bgcolor=0xffffff&amp;video_auto_play=true&amp;video_play_on_click=true&amp;player_allow_full_screen=true&amp;player_callback=_trpd_vid_cbk_0&amp;player_show_logo=true&amp;audio_init_mute=false&amp;video_url=http://api.treepodia.com/video/get/{UUID4}/{SKU}" />
+<meta property="og:video:secure_url" content="https://api.treepodia.com/video/compact.swf?player_api_base=https://api.treepodia.com/video/overlay/&amp;player_chromeless=true&amp;player_skin_on_top=false&amp;bgcolor=0xffffff&amp;video_auto_play=true&amp;video_play_on_click=true&amp;player_allow_full_screen=true&amp;player_callback=_trpd_vid_cbk_0&amp;player_show_logo=true&amp;audio_init_mute=false&amp;video_url=https://api.treepodia.com/video/get/{UUID6}/{SKU}" />
+<meta property="og:video:type" content="video/mp4" />
+<meta property="og:video:width" content="_WIDTH3_" />
+<meta property="og:video:height" content="_HEIGHT3_" />
+
+<link rel="image_src" href="{IMAGE-URL}" />
+<link rel="thumbnail" type="image/jpeg" href="{IMAGE-URL}" />	
+<link rel="video_src" href="https://api.treepodia.com/video/compact.swf?player_api_base=http://api.treepodia.com/video/overlay/&amp;player_chromeless=true&amp;player_skin_on_top=false&amp;bgcolor=0xffffff&amp;video_auto_play=true&amp;video_play_on_click=true&amp;player_allow_full_screen=true&amp;player_callback=_trpd_vid_cbk_0&amp;player_show_logo=true&amp;audio_init_mute=false&amp;video_url=http://api.treepodia.com/video/get/{UUID3}/{SKU}" />
+<meta name="medium" content="video">
+<meta name="video_height" content="_WIDTH2_">
+<meta name="video_width" content="_HEIGHT2_">
+<meta name="video_type" content="video/mp4" /></pre>
+			</div>
+			
+			<div id="button_code">
+			<h3>Button</h3><br />
+			<b>Location:</b> Under the product image (Product page)<br />
+			<b>Dynamic Content:</b>  <br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {SKU}</span> - Replace with the product SKU<br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {Video Title}</span> - Dialog header, should be replaced with the product name or
+			leave blank<br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {NAME}</span> - Replace with the product name<br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {DESCRIPTION}</span> - Replace with the product description<br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {IMAGE-URL}</span> - Replace with the product main image URL<br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {PAGE-URL}</span> - Replace with the product page URL<br />
+			<br />
+<pre><div id="video-btn" style="display:inline;">
+<a href="javascript:showVideoDialog('{Video Title}', video, '{DCOLOR}', {DBORDER})"><img src="http://www.treepodia.com/images/buttons/play.gif" border="0"/></a>
+</div>
+
+<!-- "noscript" object, hidden by default, for non-javascript users and the video sitemap -->
+<div id="video" itemprop="video" itemscope itemtype="http://schema.org/VideoObject"> 
+<meta itemprop="name" content="{NAME}" /> 
+<meta itemprop="description" content="{DESCRIPTION}" /> 
+<meta itemprop="thumbnailUrl" content="{IMAGE-URL}" /> 
+<meta itemprop="contentURL" content="http://api.treepodia.com/video/get/{UUID4}/{SKU}" />
+<meta itemprop="embedURL" content="http://api.treepodia.com/video/compact.swf?player_api_base=http://api.treepodia.com/video/overlay/&amp;player_chromeless=true&amp;player_skin_on_top=false&amp;bgcolor=0xffffff&amp;video_auto_play=true&amp;video_play_on_click=true&amp;player_allow_full_screen=true&amp;player_callback=_trpd_vid_cbk_0&amp;player_show_logo=true&amp;audio_init_mute=false&amp;video_url=http://api.treepodia.com/video/get/{UUID5}/{SKU}" />
+
+<noscript>
+<object type="application/x-shockwave-flash" data="http://api.treepodia.com/video/compact.swf" width="640px" height="400px"  title="product video player" rel="media:video">
+<param name="movie" value="http://api.treepodia.com/video/compact.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="allowScriptAccess" value="always" />
+<param name="bgcolor" value="#ffffff" />
+<param name="flashvars" value="player_api_base=http://api.treepodia.com/video/overlay/&amp;player_chromeless=false&amp;player_skin_on_top=false&amp;bgcolor=0xffffff&amp;video_auto_play=false&amp;video_play_on_click=true&amp;player_allow_full_screen=true&amp;player_callback=_trpd_vid_cbk_0&amp;player_show_logo=true&amp;audio_init_mute=false&amp;video_url=http://api.treepodia.com/video/get/{UUID}/{SKU}"/>
+</object>
+</noscript>
+</div></pre>
+			</div>
+			
+			<div id="video_code" style="display:none;">
+			<h3>Video</h3><br />
+			<b>Location:</b> Product page<br />
+			<b>Dynamic Content:</b>  <br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {SKU}</span> - Replace with the product SKU<br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {NAME}</span> - Replace with the product name<br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {DESCRIPTION}</span> - Replace with the product description<br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {IMAGE-URL}</span> - Replace with the product main image URL<br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {PAGE-URL}</span> - Replace with the product page URL<br />
+			<br />
+<pre><div id="video-location"></div>
+
+<!-- "noscript" object, hidden by default, for non-javascript users and the video sitemap -->
+<div id="video" itemprop="video" itemscope itemtype="http://schema.org/VideoObject"> 
+<meta itemprop="name" content="{NAME}" /> 
+<meta itemprop="description" content="{DESCRIPTION}" /> 
+<meta itemprop="thumbnailUrl" content="{IMAGE-URL}" /> 
+<meta itemprop="contentURL" content="http://api.treepodia.com/video/get/{UUID4}/{SKU}" />
+<meta itemprop="embedURL" content="http://api.treepodia.com/video/compact.swf?player_api_base=http://api.treepodia.com/video/overlay/&amp;player_chromeless=true&amp;player_skin_on_top=false&amp;bgcolor=0xffffff&amp;video_auto_play=true&amp;video_play_on_click=true&amp;player_allow_full_screen=true&amp;player_callback=_trpd_vid_cbk_0&amp;player_show_logo=true&amp;audio_init_mute=false&amp;video_url=http://api.treepodia.com/video/get/{UUID5}/{SKU}" />
+
+<noscript>
+<object type="application/x-shockwave-flash" data="http://api.treepodia.com/video/compact.swf" width="640px" height="400px"  title="product video player" rel="media:video">
+<param name="movie" value="http://api.treepodia.com/video/compact.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="allowScriptAccess" value="always" />
+<param name="bgcolor" value="#ffffff" />
+<param name="flashvars" value="player_api_base=http://api.treepodia.com/video/overlay/&amp;player_chromeless=false&amp;player_skin_on_top=false&amp;bgcolor=0xffffff&amp;video_auto_play=false&amp;video_play_on_click=true&amp;player_allow_full_screen=true&amp;player_callback=_trpd_vid_cbk_0&amp;player_show_logo=true&amp;audio_init_mute=false&amp;video_url=http://api.treepodia.com/video/get/{UUID}/{SKU}"/>
+</object>
+</noscript>
+</div></pre>
+			</div>
+
+			<h3>Conversion Tracking Code</h3><br />
+			<b>Location:</b> Confirmation / Thank you page<br />
+			<b>Dynamic Content:</b> <br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {SKU}</span> - Replace with the product SKU<br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {CATEGORY}</span> - Replace with the product category<br />
+			<span style="font-family: 'Courier New', Courier, monospace;color:red">&bull; {SKU2}, {SKU3}...</span> - Duplicate tracking line for additional products on the cart<br />
+			<br />
+			<div  id="tracking_code">
+<pre><script type="text/javascript">
+document.write(unescape("%3Cscript src='" + document.location.protocol + "//dxa05szpct2ws.cloudfront.net/TreepodiaAsyncLoader.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+document.write(unescape("%3Cscript src='" + document.location.protocol + "//dxa05szpct2ws.cloudfront.net/TreepodiaGA.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+function initTreepodia () {
+   // Google Anayltics
+   if(isPlayedVideo()) { trpdGASetEvent('{CATEGORY}', '{SKU}', 'Checkout with video view', 1); }
+   else if (isCgVideo()) { trpdGASetEvent('{CATEGORY}', '{SKU}', 'Checkout video control group', 1); }
+   else { trpdGASetEvent('{CATEGORY}', '{SKU}', 'CheckOut without video view', 1); }
+   
+   // Checkout
+   try { Treepodia.getProduct('{UUID}','{SKU}').logAddToCart(); } catch (e) {}
+
+   // In case you want to track more products
+   try { Treepodia.getProduct('{UUID2}','{SKU2}').logAddToCart(); } catch (e) {}
+   try { Treepodia.getProduct('{UUID3}','{SKU3}').logAddToCart(); } catch (e) {}
+}
+_BR_
+</script></pre>
+			</div>
+		</div>
+	</div>
+	
+</div>
+</center>
+<center>
+	<div id='controls' style="width:210px;">
+		<hr>
+	
+		<button id="backDiv" class="btn btn-inverse" onclick="javascript:goBack();"  disabled="true"><i class="icon-circle-arrow-left icon-white"></i> Previous</button>
+		<button id="restartDiv" class="btn btn-danger" onclick="javascript:restart();" style="display:none;"><i class="icon-repeat icon-white"></i> Restart</button>
+		<span id="contSep" style="padding:0px 4px 0px 4px;">|</span>
+		<button id="foDiv" class="btn btn-primary" onclick="javascript:goNext();">Next <i class="icon-circle-arrow-right icon-white"></i></button>
+
+	</div>
+</center>
+
+<script type="text/javascript">
+      <!--
+        function changeTextValueClick(element) { 
+          if (element.name == "uuid") {
+            if ((element.value+"").indexOf("Enter your account UUID") != -1) { element.style.color = 'black'; element.value = ''; }
+          }
+        }
+		
+		function changeTextValueBlur(element) { 
+          if (element.name == "uuid") {
+            if (element.value == "") { element.style.color = 'gray'; element.value = 'Enter your account UUID...'; }
+          }
+        }
+        
+        function selectElement(id)
+      { 
+        var div1 = document.getElementById(id);
+        div1.style.borderStyle = "solid";
+        div1.style.borderColor = "#05C";
+        styleChecked = true;
+		istyle = id;
+      }
+      
+        function unSelectElement(id)
+      {
+        var div1 = document.getElementById(id);
+        div1.style.borderStyle = "solid";
+        div1.style.borderColor = "white";
+      }
+	  
+	  function selectStyleElement(id)
+      {
+		var div1 = document.getElementById(id);
+        var radio1 = document.getElementById(id+"radio");
+        div1.style.borderStyle = "solid";
+        div1.style.borderColor = "#05C";
+        radio1.checked = true;
+		styleChecked = true;
+		
+		pstyle = id;
+      }
+      
+        function unSelectStyleElements()
+      {
+		var elIds = ["chomlessstyle","regstyle"];
+		for (var i=0;i<2;i++) {
+			var div1 = document.getElementById(elIds[i]);
+			var radio1 = document.getElementById(elIds[i]+"radio");
+			div1.style.borderStyle = "solid";
+			div1.style.borderColor = "white";
+			radio1.checked = false;
+		}
+      }
+	  
+	  function selectSkinElement(id)
+      {
+		var div1 = document.getElementById(id);
+        var radio1 = document.getElementById(id+"radio");
+        div1.style.borderStyle = "solid";
+        div1.style.borderColor = "#05C";
+        radio1.checked = true;
+		skinChecked = true;
+		
+		skin = id;
+      }
+      
+        function unSelectSkinElements()
+      {
+		var dialogIds = ["default","Blue","SkyBlue","Purple","compact","BlackGreen","BlackBlue","BlackRed"];
+		for (var i=0;i<8;i++) {
+			var div1 = document.getElementById(dialogIds[i]);
+			var radio1 = document.getElementById(dialogIds[i]+"radio");
+			div1.style.borderStyle = "solid";
+			div1.style.borderColor = "white";
+			radio1.checked = false;
+		}
+      }
+	  function zoomText(id)
+	  {
+		jQuery.fancybox({
+				'padding'		: 0,
+				'autoScale'		: true,
+				'transitionIn'	: 'elastic',
+				'transitionOut'	: 'fade',
+				'title'			: "",
+				'href'			: id,
+				'type'			: 'inline'
+			});
+	  }
+	  
+	  function zoomImage(image)
+	  {
+		jQuery.fancybox({
+				'padding'		: 0,
+				'autoScale'		: true,
+				'transitionIn'	: 'elastic',
+				'transitionOut'	: 'fade',
+				'title'			: "",
+				'href'			: image
+			});
+	  }
+      
+	function replaceInCode(container, what, toWhat) {
+		container.innerHTML = container.innerHTML.replace(what, toWhat);
+	}
+	  
+	  for (var i=2;i<8;i++) document.getElementById('step_'+i).style.display = 'block';
+	  
+	  var slider = jQuery('#slider');
+	  var uuid = "";
+      var styleChecked = false;
+	  var istyle = "embeddeddiv";
+	  var platform = "other";
+	  var esize = "default";
+	  var dcolor = 'black';
+	  var dborder = false;
+	  var pstyle = "regstyle";
+	  var skin = "BlackGreen";
+	  var facebook = false;
+	  var twitter = false;
+	  var linkedin = false;
+	  var googleAnayitics = true;
+	  var autoplay = false;
+	  var mute = false;
+	  var fullscreen = false;
+	  var loop = false;
+	  var atc_type = "";
+	  var atc_action = "";
+	  
+      document.getElementById('uuid').value = '<?php echo $uuid ?>'; 
+      -->
+</script>
+
+<script type="text/javascript">
+function restart()
+{
+	window.location = '10?UUID=' + uuid;
+}
+
+// Next
+function goNext() {
+	var okToGoForward = true;
+	
+	if (slider.data('AnythingSlider').currentPage == 1) {
+		uuid = document.getElementById('uuid').value;
+		if (platform == "magento") {
+			window.location = 'http://help.treepodia.com/node/58';
+			okToGoForward = false;
+		}
+		
+		else if (platform == "prestashop") {
+			window.location = 'http://www.treepodia.com/prestashop_new/';
+			okToGoForward = false;
+		}
+
+        else if (platform == "volusion") {
+			window.location = 'http://help.treepodia.com/node/59';
+			okToGoForward = false;
+		}
+		
+		else if (platform == "bigcommerce") {
+			window.location = 'http://help.treepodia.com/node/83';
+			okToGoForward = false;
+		}
+		
+		else if (platform == "yahoo") {
+			window.location = 'http://help.treepodia.com/node/22';
+			okToGoForward = false;
+		}
+		
+		else if (platform == "3dcart") {
+			window.location = 'http://help.treepodia.com/node/84';
+			okToGoForward = false;
+		}
+
+              else if (uuid == "Enter your account UUID..." || uuid == "") {
+			alert("Please enter your account UUID.");
+			okToGoForward = false;
+		}
+		
+		else {
+			document.getElementById('backDiv').disabled = false;
+		}
+	}
+	
+	else if (slider.data('AnythingSlider').currentPage == 2) {
+		if (!styleChecked) {
+			alert("Please choose a style.");
+			okToGoForward = false;
+		}
+		else if (istyle == "embeddeddiv") { 
+			document.getElementById('dialogSpec').style.display = 'none'; 
+			document.getElementById('embedSpec').style.display = 'inline';
+		}
+		else { 
+			document.getElementById('dialogSpec').style.display = 'inline'; 
+			document.getElementById('embedSpec').style.display = 'none';
+		}
+	}
+	else if (slider.data('AnythingSlider').currentPage == 5) {
+		if (istyle != "embeddeddiv") document.getElementById('playControls').style.display = 'none';
+		else document.getElementById('playControls').style.display = 'block';
+	}
+	
+	else if (slider.data('AnythingSlider').currentPage == 6) {
+	
+	    dcolor = '#' + document.getElementById('colorChoose').value;
+	    dborder = document.getElementById('borderChoose').checked;
+		document.getElementById('foDiv').style.display = 'none';
+		document.getElementById('backDiv').style.display = 'none';
+		document.getElementById('contSep').style.display = 'none';
+		document.getElementById('restartDiv').style.display = 'inline';
+			
+		atc_action = document.getElementById('atc_action').value;
+		
+		var embeddedCode = document.getElementById('footer_code_embed');
+		var dialogCode = document.getElementById('footer_code_dialog');
+		var checkoutCode = document.getElementById('tracking_code');
+		
+		var height = esize.substring(esize.indexOf(':')+1);
+		var width = esize.substring(0, esize.indexOf(':'));
+		
+		if (istyle == "embeddeddiv") { 
+			dialogCode.style.display = 'none';
+			document.getElementById('button_code').style.display = 'none';
+			embeddedCode.style.display = 'inline';
+			document.getElementById('video_code').style.display = 'inline';
+		}
+		else {
+			embeddedCode.style.display = 'none';
+			document.getElementById('video_code').style.display = 'none';
+			dialogCode.style.display = 'inline';
+			document.getElementById('button_code').style.display = 'inline';
+		}
+		
+		// Embedded Code
+		replaceInCode(embeddedCode, '{UUID}', uuid);
+		replaceInCode(embeddedCode, '{UUID3}', uuid);
+		replaceInCode(embeddedCode, '{UUID4}', uuid);
+                replaceInCode(embeddedCode, '{UUID6}', uuid);
+		replaceInCode(embeddedCode, '{SKIN}', skin);
+		replaceInCode(embeddedCode, '_PSTYLE_', (pstyle == "regstyle" ? 'false' : 'true'));
+		
+		if (atc_type == "url" && atc_action != "") { replaceInCode(embeddedCode, '_ATC_ACTION_', 'video.addATCURLAction("Add To Cart", "'+atc_action+'", "_self");'); }
+		else if (atc_type == "javas" && atc_action != "") { replaceInCode(embeddedCode, '_ATC_ACTION_', 'video.addATCJavaScriptAction("Add To Cart", "'+atc_action+'");'); }
+		else { replaceInCode(embeddedCode, '_ATC_ACTION_', ''); }
+		
+		if (facebook) { replaceInCode(embeddedCode, '_FACEBOOK_', 'video.addShareItem("facebook");'); }
+		else { replaceInCode(embeddedCode, ' _FACEBOOK_', ''); }
+		
+		if (twitter) { replaceInCode(embeddedCode, '_TWITTER_', 'video.addShareItem("twitter");'); }
+		else { replaceInCode(embeddedCode, ' _TWITTER_', ''); }
+		
+		if (linkedin) { replaceInCode(embeddedCode, '_LINKEDIN_', 'video.addShareItem("linkedin");'); }
+		else { replaceInCode(embeddedCode, ' _LINKEDIN_', ''); } 
+		
+		if (googleAnayitics) { replaceInCode(embeddedCode, '_GOOGLEA_', 'trpdAddGACallBack(video, \'{CATEGORY}\', \'{SKU}\', 0);'); }
+		else { replaceInCode(embeddedCode, ' _GOOGLEA_', ''); }
+			
+		replaceInCode(embeddedCode, '_FULLSCREEN_', fullscreen);
+		replaceInCode(embeddedCode, '_LOOP_', loop);
+		replaceInCode(embeddedCode, '_AUTOPLAY_', autoplay);
+		replaceInCode(embeddedCode, '_MUTE_', mute);
+		if (esize != "default") { replaceInCode(embeddedCode, '_WIDTH1_', 'video.setWidth('+width+');'); replaceInCode(embeddedCode, '_HEIGHT1_', 'video.setHeight('+height+');'); replaceInCode(embeddedCode, '_WIDTH3_', width); replaceInCode(embeddedCode, '_WIDTH2_', width); replaceInCode(embeddedCode, '_HEIGHT3_', height); replaceInCode(embeddedCode, '_HEIGHT2_', height); }
+		else { replaceInCode(embeddedCode, '_WIDTH1_', ""); replaceInCode(embeddedCode, '_HEIGHT1_', ""); replaceInCode(embeddedCode, '_WIDTH3_', '640'); replaceInCode(embeddedCode, '_WIDTH2_', '640'); replaceInCode(embeddedCode, '_HEIGHT3_', '360'); replaceInCode(embeddedCode, '_HEIGHT2_', '360'); }
+		
+		// Dialog Code
+		replaceInCode(dialogCode, '{UUID}', uuid);
+		replaceInCode(dialogCode, '{UUID3}', uuid);
+		replaceInCode(dialogCode, '{UUID4}', uuid);
+                replaceInCode(dialogCode, '{UUID6}', uuid);
+		replaceInCode(dialogCode, '{SKIN}', skin);
+		replaceInCode(dialogCode, '_PSTYLE_', (pstyle == "regstyle" ? 'false' : 'true'));
+		
+		replaceInCode(dialogCode, '_WIDTH3_', '640'); replaceInCode(dialogCode, '_WIDTH2_', '640'); replaceInCode(dialogCode, '_HEIGHT3_', '360'); replaceInCode(dialogCode, '_HEIGHT2_', '360');
+		
+		if (atc_type == "url" && atc_action != "") { replaceInCode(dialogCode, '_ATC_ACTION_', 'video.addATCURLAction("Add To Cart", "'+atc_action+'", "_self");'); }
+		else if (atc_type == "javas" && atc_action != "") { replaceInCode(dialogCode, '_ATC_ACTION_', 'video.addATCJavaScriptAction("Add To Cart", "'+atc_action+'");'); }
+		else { replaceInCode(dialogCode, '_ATC_ACTION_', ''); }
+		
+		if (facebook) { replaceInCode(dialogCode, '_FACEBOOK_', 'video.addShareItem("facebook");'); }
+		else { replaceInCode(dialogCode, ' _FACEBOOK_', ''); }
+		
+		if (twitter) { replaceInCode(dialogCode, '_TWITTER_', 'video.addShareItem("twitter");'); }
+		else { replaceInCode(dialogCode, ' _TWITTER_', ''); }
+		
+		if (linkedin) { replaceInCode(dialogCode, '_LINKEDIN_', 'video.addShareItem("linkedin");'); }
+		else { replaceInCode(dialogCode, ' _LINKEDIN_', ''); } 
+		
+		if (googleAnayitics) { replaceInCode(dialogCode, '_GOOGLEA_', 'trpdAddGACallBack(video, \'{CATEGORY}\', \'{SKU}\', 0);'); }
+		else { replaceInCode(dialogCode, ' _GOOGLEA_', ''); }
+		
+		// Other Code
+		replaceInCode(document.getElementById('button_code'), '{DCOLOR}', dcolor);
+		replaceInCode(document.getElementById('button_code'), '{DBORDER}', dborder);
+		replaceInCode(document.getElementById('button_code'), '{UUID4}', uuid);
+		replaceInCode(document.getElementById('button_code'), '{UUID5}', uuid);
+		replaceInCode(document.getElementById('button_code'), '{UUID2}', uuid);
+		replaceInCode(document.getElementById('button_code'), '{UUID}', uuid);
+		replaceInCode(document.getElementById('button_code'), '_HEIGHT_', (esize != "default" ? (40+parseInt(height)) : 400));
+		replaceInCode(document.getElementById('button_code'), '_WIDTH_', (esize != "default" ? width : 640));
+		
+		replaceInCode(document.getElementById('video_code'), '{UUID5}', uuid);
+		replaceInCode(document.getElementById('video_code'), '{UUID4}', uuid);
+		replaceInCode(document.getElementById('video_code'), '{UUID2}', uuid);
+		replaceInCode(document.getElementById('video_code'), '{UUID}', uuid);
+		replaceInCode(document.getElementById('video_code'), '_HEIGHT_', (esize != "default" ? (40+parseInt(height)) : 400));
+		replaceInCode(document.getElementById('video_code'), '_WIDTH_', (esize != "default" ? width : 640));
+						
+		replaceInCode(document.getElementById('tracking_code'), '{UUID}', uuid);
+		replaceInCode(document.getElementById('tracking_code'), '{UUID2}', uuid);
+		replaceInCode(document.getElementById('tracking_code'), '{UUID3}', uuid);
+		replaceInCode(document.getElementById('tracking_code'), '<br><span class="pln">_BR_</span>', "");
+		replaceInCode(document.getElementById('tracking_code'), '<BR><SPAN class="pln">_BR_</SPAN>', "");
+		replaceInCode(document.getElementById('tracking_code'), '<BR>_BR_', "");
+		replaceInCode(document.getElementById('tracking_code'), '<br>_BR_', "");
+		replaceInCode(document.getElementById('tracking_code'), '_BR_', "");
+		
+		
+	}
+
+	// Move Forward
+	if (okToGoForward) slider.data('AnythingSlider').goForward();
+}
+// End Next
+
+// Back
+function goBack() {
+	var okToGoBack = true;
+	
+	if (slider.data('AnythingSlider').currentPage == 2) {
+		document.getElementById('backDiv').disabled = true;
+	}
+	
+	else if (slider.data('AnythingSlider').currentPage == 7) {
+		document.getElementById('foDiv').disabled = false;
+	}
+
+	if (okToGoBack) slider.data('AnythingSlider').goBack();
+}
+</script>
+
+ <script type="text/javascript">
+			document.write(unescape("%3Cscript src='" + document.location.protocol + "//dxa05szpct2ws.cloudfront.net/TreepodiaAsyncLoader.js' type='text/javascript'%3E%3C/script%3E"));
+			
+			var trpdSKU = '4VO_uk';
+			
+			var video; var product;
+			function initTreepodia() { 
+				product = Treepodia.getProduct('UA-SAMPLE', trpdSKU); 
+				product.requestVideo(handleVideo);
+				
+			}
+			function handleVideo(vid) { 
+				video = vid;
+			}	
+</script>
